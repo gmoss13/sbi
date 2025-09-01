@@ -91,5 +91,5 @@ class ZukoNeuralODE(NeuralODE):
 
         return NormalizingFlow(
             transform=transform,
-            base=DiagNormal(self.mean_base, self.std_base).expand(condition.shape[:-1]),
+            base=DiagNormal(self.mean_base, self.std_base).expand(condition.shape[:1]),
         )
